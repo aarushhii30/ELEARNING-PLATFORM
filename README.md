@@ -1,172 +1,262 @@
-# 🎓 E-Learning Platform
+<div align="center">
 
-A full-stack MERN-based E-Learning Platform that enables users to browse courses, enroll in learning programs, track progress, and access personalized dashboards. The platform also includes an admin panel for course management, user monitoring, and analytics.
+# 🎓 EduLearn — E-Learning Platform
 
----
+**A full-stack MERN application for modern online education**
 
-## 🚀 Features
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
 
-### User Features
+[Features](#-features) • [Tech Stack](#️-tech-stack) • [Project Structure](#-project-structure) • [API Docs](#-api-endpoints) • [Setup](#️-installation--setup) • [Deployment](#-deployment)
 
-* User Registration & Login
-* JWT Authentication & Authorization
-* Browse and Search Courses
-* Course Enrollment
-* Progress Tracking
-* Protected Dashboard
-* Responsive UI
-
-### Admin Features
-
-* Create, Update, and Delete Courses
-* Manage Users
-* View Platform Reports & Metrics
-* Role-Based Access Control
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Overview
 
-### Frontend
+EduLearn is a production-ready e-learning platform that enables learners to browse, enroll, and track progress across courses — while giving admins full control over content, users, and analytics. Built with the MERN stack and secured with JWT-based authentication.
 
-* React.js (Vite)
-* React Router DOM
-* Context API
-* Axios
-* Tailwind CSS
+---
 
-### Backend
+## ✨ Features
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* bcrypt.js
+### 👩‍🎓 For Learners
+| Feature | Description |
+|---|---|
+| 🔐 Auth | Secure registration & login with JWT |
+| 🔍 Discovery | Browse & search courses by category |
+| 📚 Enrollment | One-click course enrollment |
+| 📊 Progress | Track completion per course |
+| 🖥️ Dashboard | Personalized learner dashboard |
+| 📱 Responsive | Fully mobile-friendly UI |
 
-### Testing
+### 🛠️ For Admins
+| Feature | Description |
+|---|---|
+| 📝 Course CRUD | Create, update, and delete courses |
+| 👥 User Management | View and manage all registered users |
+| 📈 Analytics | Platform-wide reports and metrics |
+| 🔒 RBAC | Role-based access control |
 
-* Vitest
-* React Testing Library
-* Jest
-* Supertest
+---
+
+## 🏗️ Tech Stack
+
+<table>
+<tr>
+<td valign="top" width="33%">
+
+**Frontend**
+- ⚛️ React.js (Vite)
+- 🔀 React Router DOM
+- 🌐 Context API
+- 📡 Axios
+- 🎨 Tailwind CSS
+
+</td>
+<td valign="top" width="33%">
+
+**Backend**
+- 🟢 Node.js
+- 🚂 Express.js
+- 🍃 MongoDB + Mongoose
+- 🔑 JWT Authentication
+- 🔒 bcrypt.js
+
+</td>
+<td valign="top" width="33%">
+
+**Testing**
+- ⚡ Vitest
+- 🧪 React Testing Library
+- 🃏 Jest
+- 🔬 Supertest
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 📂 Project Structure
 
-```text
+```
 ELEARNING-PLATFORM/
 │
-├── frontend/
+├── 📁 frontend/
 │   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── services/
-│   │   ├── routes/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   └── vite.config.js
+│   └── src/
+│       ├── assets/          # Static assets
+│       ├── components/      # Reusable UI components
+│       ├── pages/           # Route-level page components
+│       ├── context/         # Global state (Context API)
+│       ├── services/        # Axios API service calls
+│       ├── routes/          # Route definitions & guards
+│       ├── App.jsx
+│       └── main.jsx
 │
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── seed/
-│   ├── tests/
-│   ├── server.js
-│   └── package.json
+├── 📁 backend/
+│   ├── config/              # DB & env configuration
+│   ├── controllers/         # Route handler logic
+│   ├── middleware/          # Auth, error, validation middleware
+│   ├── models/              # Mongoose schemas
+│   ├── routes/              # Express route definitions
+│   ├── seed/                # Database seed scripts
+│   ├── tests/               # API test suites
+│   └── server.js            # Entry point
 │
-├── README.md
-└── .gitignore
+├── .gitignore
+└── README.md
 ```
+
+---
 
 ## 🔐 Authentication & Security
 
-* JWT-based Authentication
-* Password Hashing using bcrypt
-* Protected Routes
-* Role-Based Authorization
-* Secure Environment Variables
-* Input Validation
+- **JWT** — Stateless token-based authentication
+- **bcrypt** — Secure password hashing
+- **Protected Routes** — Auth-guarded frontend & backend routes
+- **RBAC** — Role-based authorization (`user` / `admin`)
+- **Env Variables** — Sensitive config via `.env` files
+- **Input Validation** — Server-side request validation
 
 ---
 
 ## 📡 API Endpoints
 
-### Authentication
+### 🔑 Authentication
+```
+POST   /api/auth/signup       → Register a new user
+POST   /api/auth/login        → Login and receive JWT
+GET    /api/auth/me           → Get current user profile
+```
 
-* POST `/api/auth/signup`
-* POST `/api/auth/login`
-* GET `/api/auth/me`
+### 📚 Courses
+```
+GET    /api/courses           → List all courses
+GET    /api/courses/:id       → Get course by ID
+POST   /api/courses           → Create a course        [Admin]
+PUT    /api/courses/:id       → Update a course        [Admin]
+DELETE /api/courses/:id       → Delete a course        [Admin]
+```
 
-### Courses
+### 🎓 Enrollment
+```
+POST   /api/enroll                        → Enroll in a course
+GET    /api/enrollments/me                → Get my enrollments
+PUT    /api/enrollments/:id/progress      → Update course progress
+```
 
-* GET `/api/courses`
-* GET `/api/courses/:id`
-* POST `/api/courses`
-* PUT `/api/courses/:id`
-* DELETE `/api/courses/:id`
-
-### Enrollment
-
-* POST `/api/enroll`
-* GET `/api/enrollments/me`
-* PUT `/api/enrollments/:id/progress`
-
-### Admin
-
-* GET `/api/users`
-* GET `/api/reports`
+### 👑 Admin
+```
+GET    /api/users             → List all users         [Admin]
+GET    /api/reports           → Platform analytics     [Admin]
+```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### Backend Setup
+### Prerequisites
+- Node.js `v18+`
+- MongoDB (local or Atlas)
+- npm or yarn
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/elearning-platform.git
+cd elearning-platform
+```
+
+### 2. Backend Setup
 ```bash
 cd backend
 npm install
+```
+
+Create a `.env` file in `/backend`:
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+```
+
+```bash
 npm run dev
 ```
 
-### Frontend Setup
-
+### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
+```
+
+Create a `.env` file in `/frontend`:
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+```bash
 npm run dev
 ```
+
+> 🚀 App runs at `http://localhost:5173`
 
 ---
 
 ## 🌐 Deployment
 
-* Frontend: Vercel
-* Backend: Render
-* Database: MongoDB Atlas
+| Service | Platform |
+|---|---|
+| Frontend | [Vercel](https://vercel.com) |
+| Backend | [Render](https://render.com) |
+| Database | [MongoDB Atlas](https://www.mongodb.com/atlas) |
 
 ---
 
-## 📈 Future Enhancements
+## 🧪 Running Tests
 
-* Course Video Uploads
-* Payment Gateway Integration
-* Certificate Generation
-* Live Classes & Webinars
-* Discussion Forums
+```bash
+# Backend tests (Jest + Supertest)
+cd backend && npm test
+
+# Frontend tests (Vitest + RTL)
+cd frontend && npm test
+```
+
+---
+
+## 🔮 Future Enhancements
+
+- [ ] 🎥 Course video uploads (Cloudinary / S3)
+- [ ] 💳 Payment gateway integration (Stripe / Razorpay)
+- [ ] 🏆 Certificate generation on course completion
+- [ ] 📡 Live classes & webinars
+- [ ] 💬 Discussion forums per course
 
 ---
 
 ## 👩‍💻 Author
 
-Aarushi Sharma
+<div align="center">
 
-Full Stack MERN Developer
+**Aarushi Sharma**
+*Full Stack MERN Developer*
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
+
+</div>
+
+---
+
+<div align="center">
+
+Made with ❤️ by Aarushi Sharma
+
+</div>
