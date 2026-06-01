@@ -12,6 +12,11 @@
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
 
 [Features](#-features) • [Tech Stack](#️-tech-stack) • [Project Structure](#-project-structure) • [API Docs](#-api-endpoints) • [Setup](#️-installation--setup) • [Deployment](#-deployment)
+## 🔗 Live Demo
+
+Frontend: https://elearning-platform-wine.vercel.app
+
+Backend API: https://elearning-platform-sukk.onrender.com/api/health
 
 </div>
 
