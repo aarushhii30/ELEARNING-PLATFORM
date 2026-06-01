@@ -1,79 +1,172 @@
-# E-Learning Platform (Full Stack)
+# 🎓 E-Learning Platform
 
-A product-level e-learning app: course browsing, authentication, enrollment,
-progress tracking, admin controls. Built as a monorepo with `frontend/` and
-`backend/` directories.
+A full-stack MERN-based E-Learning Platform that enables users to browse courses, enroll in learning programs, track progress, and access personalized dashboards. The platform also includes an admin panel for course management, user monitoring, and analytics.
 
-## Tech stack
-- **Frontend:** React (Vite) + React Router + Context API, styled with Tailwind CSS, Axios.
-- **Backend:** Node.js + Express, MongoDB (Mongoose), JWT auth (httpOnly cookie + Bearer fallback), bcrypt.
-- **Testing:** Vitest + React Testing Library (frontend), Jest + Supertest (backend).
+---
 
-## Project structure
+## 🚀 Features
+
+### User Features
+
+* User Registration & Login
+* JWT Authentication & Authorization
+* Browse and Search Courses
+* Course Enrollment
+* Progress Tracking
+* Protected Dashboard
+* Responsive UI
+
+### Admin Features
+
+* Create, Update, and Delete Courses
+* Manage Users
+* View Platform Reports & Metrics
+* Role-Based Access Control
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React.js (Vite)
+* React Router DOM
+* Context API
+* Axios
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcrypt.js
+
+### Testing
+
+* Vitest
+* React Testing Library
+* Jest
+* Supertest
+
+---
+
+## 📂 Project Structure
+
+```text
+ELEARNING-PLATFORM/
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── services/
+│   │   ├── routes/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── seed/
+│   ├── tests/
+│   ├── server.js
+│   └── package.json
+│
+├── README.md
+└── .gitignore
 ```
-elearning-platform/
-├── backend/      # Express + MongoDB API
-└── frontend/     # React (Vite) client
-```
 
-## Quick start
+## 🔐 Authentication & Security
 
-### 1. Backend
+* JWT-based Authentication
+* Password Hashing using bcrypt
+* Protected Routes
+* Role-Based Authorization
+* Secure Environment Variables
+* Input Validation
+
+---
+
+## 📡 API Endpoints
+
+### Authentication
+
+* POST `/api/auth/signup`
+* POST `/api/auth/login`
+* GET `/api/auth/me`
+
+### Courses
+
+* GET `/api/courses`
+* GET `/api/courses/:id`
+* POST `/api/courses`
+* PUT `/api/courses/:id`
+* DELETE `/api/courses/:id`
+
+### Enrollment
+
+* POST `/api/enroll`
+* GET `/api/enrollments/me`
+* PUT `/api/enrollments/:id/progress`
+
+### Admin
+
+* GET `/api/users`
+* GET `/api/reports`
+
+---
+
+## ⚙️ Installation & Setup
+
+### Backend Setup
+
 ```bash
 cd backend
-cp .env.example .env        # set MONGO_URI + JWT_SECRET
 npm install
-npm run seed                # optional: demo data + accounts
-npm run dev                 # http://localhost:5000
+npm run dev
 ```
 
-### 2. Frontend
+### Frontend Setup
+
 ```bash
 cd frontend
-cp .env.example .env        # set VITE_API_URL=http://localhost:5000/api
 npm install
-npm run dev                 # http://localhost:5173
+npm run dev
 ```
 
-### Demo accounts (after seeding)
-- Admin: `admin@demo.com` / `password123`
-- User:  `user@demo.com`  / `password123`
+---
 
-## API endpoints
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/api/auth/signup` | Register |
-| POST | `/api/auth/login` | Login (returns JWT) |
-| GET  | `/api/auth/me` | Current user (protected) |
-| GET  | `/api/courses` | List with `?category=&search=&difficulty=&maxPrice=&page=` |
-| GET  | `/api/courses/:id` | Course by id or slug |
-| POST | `/api/courses` | Create (admin) |
-| PUT  | `/api/courses/:id` | Update (admin) |
-| DELETE | `/api/courses/:id` | Delete (admin) |
-| POST | `/api/enroll` | Enroll in a course |
-| GET  | `/api/enrollments/me` | My enrollments + progress |
-| PUT  | `/api/enrollments/:id/progress` | Update lesson progress |
-| GET  | `/api/users` | List users (admin) |
-| GET  | `/api/reports` | Simple metrics (admin) |
+## 🌐 Deployment
 
-## Frontend routes
-`/` Landing · `/courses` listing · `/courses/:slug` detail · `/login` · `/signup`
-· `/dashboard` (protected) · `/admin` (admin only)
+* Frontend: Vercel
+* Backend: Render
+* Database: MongoDB Atlas
 
-## Security
-- Passwords hashed with bcrypt.
-- JWT with expiry, stored in httpOnly cookie (Bearer token fallback in localStorage).
-- Admin routes protected by role middleware.
-- Server-side input validation.
-- Secrets in `.env` (see `.env.example`).
+---
 
-## Deployment
-- **Frontend → Vercel:** set `VITE_API_URL` to your API base URL.
-- **Backend → Render/Heroku:** set `MONGO_URI`, `JWT_SECRET`, `CLIENT_URL`.
-- **Database → MongoDB Atlas:** whitelist your server IPs.
+## 📈 Future Enhancements
 
-## Tests
-```bash
-cd backend  && npm test     # requires running MongoDB
-cd frontend && npm test
-```
+* Course Video Uploads
+* Payment Gateway Integration
+* Certificate Generation
+* Live Classes & Webinars
+* Discussion Forums
+
+---
+
+## 👩‍💻 Author
+
+Aarushi Sharma
+
+Full Stack MERN Developer
